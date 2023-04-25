@@ -21,7 +21,7 @@ jobs:
         go-version: 1.19
 
     - name: Build gnark
-      run: go build -C gnark
+      run: cd gnark && go build -v ./...
 
-    - name: golangci-lint
-      uses: golangci/golangci-lint-action@v3
+    - name: Build gnark (benchmarks)
+      run: cd benchmarks/gnark && go build -v ./...
